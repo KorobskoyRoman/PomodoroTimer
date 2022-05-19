@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     private var isStarted: Bool = false
     
     private var circleView: CircleView!
-    private lazy var timeInterval: TimeInterval = isWorkTime ? 1 * Metrics.relaxTimeMins : 1 * Metrics.workTimeMins
+    private lazy var timeInterval: TimeInterval = isWorkTime ? 60 * Metrics.relaxTimeMins : 60 * Metrics.workTimeMins
     private lazy var time = Int(timeInterval)
     private var timer = Timer()
     
@@ -93,7 +93,7 @@ class MainViewController: UIViewController {
                 startTimer()
                 time = Int(1.0 * Metrics.relaxTimeMins)
                 circleView.startResumeAnimation(duration: Double(time))
-                progressLabel.text = formatTime(Int(Metrics.relaxTimeMins) * 1)
+                progressLabel.text = formatTime(Int(Metrics.relaxTimeMins) * 60)
                 startPauseButton.setImage(UIImage(systemName: "pause"), for: .normal)
                 circles += 1
             }
@@ -129,7 +129,7 @@ extension MainViewController {
 }
 
 private enum Metrics {
-    static let workTimeMins = 1.0
+    static let workTimeMins = 25.0
     static let relaxTimeMins = 5.0
     
     static let marginConstant: CGFloat = 20
