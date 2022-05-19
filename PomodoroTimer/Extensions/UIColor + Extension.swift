@@ -19,4 +19,8 @@ extension UIColor {
     static func mainWhite() -> UIColor {
         return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
+    
+    static func mainPurple() -> UIColor {
+        return #colorLiteral(red: 0.6, green: 0.2196078431, blue: 0.5568627451, alpha: 1)
+    }
 }
