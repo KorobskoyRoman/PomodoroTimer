@@ -9,14 +9,14 @@ import UIKit
 
 class CircleView: UIView {
     
-    private var circleLayer = CAShapeLayer()
-    private var progressLayer = CAShapeLayer()
+    var circleLayer = CAShapeLayer()
+    var progressLayer = CAShapeLayer()
     
     private var startPoint = CGFloat(-Double.pi / 2)
     private var endPoint = CGFloat(3 * Double.pi / 2)
     
     private var isAnimationStarted: Bool = false
-        
+ 
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ class CircleView: UIView {
     
     func createCircularPath() {
         let circularPath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0), radius: 140, startAngle: startPoint, endAngle: endPoint, clockwise: true)
-
+                
         circleLayer.path = circularPath.cgPath
 
         circleLayer.fillColor = nil
